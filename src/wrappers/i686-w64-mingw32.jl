@@ -2,18 +2,18 @@
 export cindex, csearch
 
 JLLWrappers.@generate_wrapper_header("GoogleCodeSearch")
-JLLWrappers.@declare_executable_product(cindex)
 JLLWrappers.@declare_executable_product(csearch)
+JLLWrappers.@declare_executable_product(cindex)
 function __init__()
     JLLWrappers.@generate_init_header()
     JLLWrappers.@init_executable_product(
-        cindex,
-        "bin\\cindex.exe",
+        csearch,
+        "bin\\csearch.exe",
     )
 
     JLLWrappers.@init_executable_product(
-        csearch,
-        "bin\\csearch.exe",
+        cindex,
+        "bin\\cindex.exe",
     )
 
     JLLWrappers.@generate_init_footer()
